@@ -3,7 +3,7 @@ from campaign.base_api import BaseAPI
 from utils.config import UTCTime
 
 
-class CampaignService(BaseApi):
+class CampaignService(BaseAPI):
     def __init__(self):
         super().__init__("http://localhost:7070")
 
@@ -19,5 +19,11 @@ class CampaignService(BaseApi):
             "scheduledTime": scheduled_time,
         }
 
-        return self.post("/campaigns", payload)
-    
+        response, status_code = self.post("/campaigns", payload)
+
+        if response:
+            print(f"payload :  {payload}")
+            print(f"response :  {response}")
+            print(f"Status code :  {status_code}")
+            return response, status_code
+        return 500, {"error": "Server error"}
