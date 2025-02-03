@@ -171,3 +171,10 @@ cython_debug/
 .pypirc
 
 ignore/**
+
+#projects
+venv/
+__pycache__/
+allure-results/
+allure-report/
+*.log
