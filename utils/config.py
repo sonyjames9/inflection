@@ -10,5 +10,5 @@ class LoggerConfig:
 
 class UTCTime:
     @staticmethod
-    def get_utc_epoch(minutes_from_now):
-        return int(time.time()) + (minutes_from_now * 60)
+    def get_utc_epoch(minutes_from_now: int = 10):
+        return int(time.time()) + (minutes_from_now)
