@@ -1,0 +1,31 @@
+1. As a user, I want to create a new email campaign with a scheduled send time and date, so that the campaign is sent automatically at the specified time.
+function for
+   1. scheduled send time and date
+   2. campaign is sent automatically at the specified time
+
+2. As a user, I want to select a recipient list for my scheduled campaign, so that the emails are sent to the intended audience.
+   1. select recipient list for the scheduled campaign
+   2. emails are sent to intended audience
+
+3. As a user, I want to choose an email template for my scheduled campaign, so that the campaign content is consistent and professional.
+   1. Choose an email template for the scheduled campaign
+   2. So that campaign content is consistent and professional
+
+4. As a user, I want to edit the name of my scheduled campaigns
+   1. Edit the name of scheduled campaigns
+
+5. As a user, I want to cancel a scheduled campaign, so that it is not sent if it is no longer needed.
+   1.  Cancel a scheduled campaign, so that its not sent if no longer required
+
+
+
+
+
+To submit the assignment -
+1.  Create a github repository
+2.  Share the test plans as part of the repo
+3.  Create a test suite with end-to-end and integration test cases separately.
+4.  Please share the code on GitHub with well-documented commits. Avoid submitting a single commit containing all the code. Instead, break down your commits to correspond with each distinct functionality or feature you are adding
+5.  The test cases should be easy to run
+    1.  Use a shell script or any other means to build and run tests easily
+    2.  Add a readme file explaining how to setup and run the tests
