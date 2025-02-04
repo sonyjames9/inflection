@@ -19,12 +19,12 @@ COPY  campaign \
   ./
 
 # # Install dependencies
-# RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Install dependencies and Allure CLI
-RUN pip install --no-cache-dir -r requirements.txt && wget https://github.com/allure-framework/allure2/releases/download/2.19.0/allure-2.19.0.tgz && \
+RUN wget https://github.com/allure-framework/allure2/releases/download/2.19.0/allure-2.19.0.tgz && \
   tar -xvzf allure-2.19.0.tgz && \
-  mv allure-2.19.0 /app/allure
+  mv allure-2.19.0 /allure
 
 # Add Allure to PATH
 ENV PATH="/app/allure/bin:$PATH"
