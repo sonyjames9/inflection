@@ -175,6 +175,6 @@ ignore/**
 #projects
 venv/
 __pycache__/
+**/__pycache__/
 allure-results/
-allure-report/
 *.log
