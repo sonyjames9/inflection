@@ -10,6 +10,7 @@ COPY  campaign \
   test_plans \
   tests_campaign \ 
   utils \ 
+  .dockerignore \ 
   .gitignore \ 
   Dockerfile \ 
   README.md \ 
