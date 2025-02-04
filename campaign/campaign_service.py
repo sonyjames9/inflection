@@ -1,6 +1,6 @@
-from re import A
 from campaign.base_api import BaseAPI
 from utils.config import UTCTime
+import random
 
 
 class CampaignService(BaseAPI):
@@ -33,28 +33,32 @@ class CampaignService(BaseAPI):
         }
 
         response, status_code = self.post("/campaigns", payload)
+        # campaign_id = response["data"].get("id")
 
         if response:
-            print(f"payload :  {payload}")
-            print(f"response :  {response}")
-            print(f"Status code :  {status_code}")
+            # print(f"payload :  {payload}")
+            # print(f"response :  {response}")
+            # print(f"Status code :  {status_code}")
+            # print(f"campaign_id :  {campaign_id}")
             return response, status_code
+            # return response, status_code, campaign_id
+
         return 500, {"error": "Server error"}
 
-        def edit_campaign_name(self, campaign_id, new_campaign_name):
+    def edit_campaign_name(self, campaign_id, new_campaign_name):
 
-            if not campaign_id.strip():
-                return {"error": "Campaign id cannot be empty."}
+        if not campaign_id.strip():
+            return {"error": "Campaign id cannot be empty."}
 
-            if not new_campaign_name.strip():
-                return {"error": "New campaign name cannot be empty."}
+        if not new_campaign_name.strip():
+            return {"error": "New campaign name cannot be empty."}
 
-            payload = {"campaignName": new_campaign_name}
-            response, status_code = self.patch(f"/campaigns/{campaign_id}", payload)
+        payload = {"campaignName": new_campaign_name}
+        response, status_code = self.patch(f"/campaigns/{campaign_id}/name", payload)
 
-            if response:
-                print(f"payload :  {payload}")
-                print(f"response :  {response}")
-                print(f"Status code :  {status_code}")
-                return response, status_code
-            return 500, {"error": "Server error"}
+        if response:
+            # print(f"payload :  {payload}")
+            # print(f"response :  {response}")
+            # print(f"Status code :  {status_code}")
+            return response, status_code
+        return 500, {"error": "Server error"}
