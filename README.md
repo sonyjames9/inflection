@@ -16,6 +16,12 @@ The Marketing Campaign Scheduling feature allows users to schedule email campaig
 - all the reports are user generated
 ```
 
+---
+
+Steps to run from docker:
+- docker build -t campaign-tests .
+- docker run -p 40481:40481 -e API_BASE_URL="http://host.docker.internal:7070" --rm -v $(pwd)/allure-results:/app/allure-results campaign-tests
+- check on host browser: http://127.0.0.1:40481/index.html
 
 ---
 

@@ -3,6 +3,7 @@ import time
 import random
 import string
 import uuid
+import os
 
 
 class LoggerConfig:
@@ -35,3 +36,14 @@ class NameGenerator:
             random.choices(string.ascii_uppercase + string.digits, k=5)
         )
         return f"{prefix}_{random_part}"  # Example: Test_XYZ12
+
+
+
+class AppConfig:
+
+    BASE_URL = os.getenv(
+        "API_BASE_URL", "http://localhost:7070"
+    )  
+    @staticmethod
+    def get_base_url():
+        return AppConfig.BASE_URL
