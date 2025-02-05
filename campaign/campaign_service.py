@@ -1,5 +1,5 @@
 from campaign.base_api import BaseAPI
-from utils.config import UTCTime
+from utils.config import AppConfig, UTCTime
 import random
 
 
@@ -8,8 +8,7 @@ class CampaignService(BaseAPI):
     EMAIL_TEMPLATES = ["EM-001", "EM-002", "EM-003", "EM-004"]
 
     def __init__(self):
-        # super().__init__("http://localhost:7070")
-        super().__init__("http://host.docker.internal:7070")
+        super().__init__(AppConfig.get_base_url())
 
     def create_campaign(
         self, campaign_name, email_template_id, recipient_list_id, scheduled_minutes
